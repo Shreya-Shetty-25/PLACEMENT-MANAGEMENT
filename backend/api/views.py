@@ -32,7 +32,7 @@ def dashboard(request):
     if request.method=="GET":
         response=f"Hey {request.user}, You are seeing a GET response"
         return Response({'response':response},status=status.HTTP_200_OK)
-    elif request.method=="GET":
+    elif request.method=="POST":
         text=request.POST.get("text")
         response=f"Hey {request.user}, your text is {text}"
         return Response({'response':response},status=status.HTTP_200_OK)

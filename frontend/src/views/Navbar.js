@@ -1,7 +1,4 @@
-import {useContext} from 'react'
-import { jwtDecode as jwt_decode } from 'jwt-decode';
-import AuthContext from '../context/AuthContext'
-import { Link } from 'react-router-dom'
+
   
   const Navbar = () =>  {   
 
