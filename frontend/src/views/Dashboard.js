@@ -2,7 +2,16 @@ import React, { useState, useEffect } from 'react';
 import useAxios from "../utils/useAxios";
 import { jwtDecode } from 'jwt-decode';
 import './Dashboard.css'; // Ensure you import the CSS file
+import {NavLink} from 'react-router-dom';
+import {Navbar} from 'react-bootstrap';
 
+import {
+  CDBSidebar,
+  CDBSidebarContent,
+  CDBSidebarHeader,
+  CDBSidebarMenu,
+  CDBSidebarMenuItem,
+} from 'cdbreact';
 function Dashboard() {
   const [res, setRes] = useState("");
   const [activeItem, setActiveItem] = useState("Dashboard"); // Keep track of the active nav item
@@ -50,7 +59,7 @@ function Dashboard() {
 
   return (
     <div className="containerss">
-      <nav className="side-nav">
+      {/* <nav className="side-nav">
         <ul className="nav-menu">
           <li 
             className={`nav-item ${activeItem === "Dashboard" ? "active" : ""}`} 
@@ -88,7 +97,28 @@ function Dashboard() {
       <div className="dashboard-content">
         <h1>{activeItem} Content</h1>
         <p>{res}</p>
-      </div>
+      </div> */}
+          <div className='sidebar'>
+    <CDBSidebar textColor="#333" backgroundColor="#f0f0f0">
+        <CDBSidebarHeader prefix={<i className="fa fa-bars" />}>
+          Navigation
+        </CDBSidebarHeader>
+        <CDBSidebarContent>
+          <CDBSidebarMenu>
+            <NavLink exact to="/" activeClassName="activeClicked">
+              <CDBSidebarMenuItem icon="home">Home</CDBSidebarMenuItem>
+            </NavLink>
+            <NavLink exact to="/students" activeClassName="activeClicked">
+              <CDBSidebarMenuItem icon="list">Students List</CDBSidebarMenuItem>
+            </NavLink>
+            <NavLink exact to="/manage" activeClassName="activeClicked">
+              <CDBSidebarMenuItem icon="user">Manage Students</CDBSidebarMenuItem>
+            </NavLink>
+          </CDBSidebarMenu>
+        </CDBSidebarContent>
+      </CDBSidebar>
+    </div>
+
     </div>
   );
 }

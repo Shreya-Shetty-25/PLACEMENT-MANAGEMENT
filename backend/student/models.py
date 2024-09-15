@@ -5,9 +5,10 @@ from django.db import models
 
 class Student(models.Model):
     studentId = models.AutoField(primary_key=True)
-    enrollment=models.BigIntegerField()
+    
     FirstName = models.CharField(max_length=100)
     LastName = models.CharField(max_length=100)
+    enrollment=models.BigIntegerField()
     # RegistrationNo = models.CharField(max_length=100)
     Email = models.CharField(max_length=100)
     branch = models.CharField(max_length=100)
