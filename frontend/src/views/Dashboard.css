@@ -1,10 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Grandstander&display=swap");
-
-body {
-  /* font-family: "Grandstander", cursive; */
-}
-
-* {
+/* * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -92,4 +86,4 @@ body {
 .dashboard-content p {
   font-size: 1.2rem;
   color: #555;
-}
+}  */

@@ -3,7 +3,8 @@ import useAxios from "../utils/useAxios";
 import { jwtDecode } from 'jwt-decode';
 import './Dashboard.css'; // Ensure you import the CSS file
 import {NavLink} from 'react-router-dom';
-import {Navbar} from 'react-bootstrap';
+// import {Navbar} from 'react-bootstrap';
+import Navbar from './Navbar';
 
 import {
   CDBSidebar,
@@ -59,45 +60,6 @@ function Dashboard() {
 
   return (
     <div className="containerss">
-      {/* <nav className="side-nav">
-        <ul className="nav-menu">
-          <li 
-            className={`nav-item ${activeItem === "Dashboard" ? "active" : ""}`} 
-            onClick={() => handleNavClick("Dashboard")}
-          >
-            <a href="#"><i className="fas fa-tachometer-alt"></i><span className="menu-text">Dashboard</span></a>
-          </li>
-          <li 
-            className={`nav-item ${activeItem === "Users" ? "active" : ""}`} 
-            onClick={() => handleNavClick("Users")}
-          >
-            <a href="#"><i className="fas fa-user"></i><span className="menu-text">Users</span></a>
-          </li>
-          <li 
-            className={`nav-item ${activeItem === "Posts" ? "active" : ""}`} 
-            onClick={() => handleNavClick("Posts")}
-          >
-            <a href="#"><i className="fas fa-file-alt"></i><span className="menu-text">Posts</span></a>
-          </li>
-          <li 
-            className={`nav-item ${activeItem === "Media" ? "active" : ""}`} 
-            onClick={() => handleNavClick("Media")}
-          >
-            <a href="#"><i className="fas fa-play"></i><span className="menu-text">Media</span></a>
-          </li>
-          <li 
-            className={`nav-item ${activeItem === "Exit" ? "active" : ""}`} 
-            onClick={() => handleNavClick("Exit")}
-          >
-            <a href="#"><i className="fas fa-sign-out-alt"></i><span className="menu-text">Exit</span></a>
-          </li>
-        </ul>
-      </nav>
-
-      <div className="dashboard-content">
-        <h1>{activeItem} Content</h1>
-        <p>{res}</p>
-      </div> */}
           <div className='sidebar'>
     <CDBSidebar textColor="#333" backgroundColor="#f0f0f0">
         <CDBSidebarHeader prefix={<i className="fa fa-bars" />}>
@@ -113,6 +75,12 @@ function Dashboard() {
             </NavLink>
             <NavLink exact to="/manage" activeClassName="activeClicked">
               <CDBSidebarMenuItem icon="user">Manage Students</CDBSidebarMenuItem>
+            </NavLink>
+            <NavLink exact to="/company" activeClassName="activeClicked">
+              <CDBSidebarMenuItem icon="user">Companies</CDBSidebarMenuItem>
+            </NavLink>
+            <NavLink exact to="/managecompany" activeClassName="activeClicked">
+              <CDBSidebarMenuItem icon="user">Manage Companies</CDBSidebarMenuItem>
             </NavLink>
           </CDBSidebarMenu>
         </CDBSidebarContent>

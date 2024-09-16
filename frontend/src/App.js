@@ -12,6 +12,8 @@ import Students from './views/Students'
 import Manage from "./views/Manage"
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "./App.css"
+import Company from './views/Company'
+import ManageCompany from './views/ManageCompany'
 
 function App() {
   return (
@@ -29,6 +31,8 @@ function App() {
           <Route path="/register" element={<Register />} />
           <Route path="/students" element={<Students/>} />
           <Route path="/manage" element={<Manage/>} />
+          <Route path="/company" element={<Company/>} />
+          <Route path="/managecompany" element={<ManageCompany/>} />
         </Routes>
       
       </AuthProvider>

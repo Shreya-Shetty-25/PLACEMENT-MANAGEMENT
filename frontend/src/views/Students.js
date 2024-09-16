@@ -22,9 +22,9 @@ const Students = () => {
   <>
   
    <div className="container-fluid side-container">
-    {/* <div>
+    <div>
     <Dashboard/>
-    </div> */}
+    </div>
 
    <div className="row side-row" >
     <p id="before-table"></p>
