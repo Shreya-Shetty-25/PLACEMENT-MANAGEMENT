@@ -14,6 +14,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import "./App.css"
 import Company from './views/Company'
 import ManageCompany from './views/ManageCompany'
+// import HireStudents from './views/HireStudents'
 
 function App() {
   return (
@@ -33,6 +34,7 @@ function App() {
           <Route path="/manage" element={<Manage/>} />
           <Route path="/company" element={<Company/>} />
           <Route path="/managecompany" element={<ManageCompany/>} />
+          {/* <Route path="/hirestudent" element={<HireStudents/>} /> */}
         </Routes>
       
       </AuthProvider>

@@ -1,0 +1,742 @@
+/* Iport fonts */
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap');
+
+/* colors */
+:root {
+    --white: rgb(255, 255, 255);
+    --black: black;
+    --blue:#90AEAD;
+    --darkBlue: #244855;
+}
+
+/* Main content styling */
+.main-content {
+    margin-top: 70px; /* Adjust this based on your navbar height */
+    font-family: 'Merriweather', serif; /* For paragraphs */
+    letter-spacing: 1px;
+}
+
+/* General styles for the video section */
+/* Hide video controls */
+.video-fullscreen::-webkit-media-controls {
+    display: none !important;
+}
+.video-fullscreen::-webkit-media-controls-panel {
+    display: none !important;
+}
+.video-fullscreen::-webkit-media-controls-play-button {
+    display: none !important;
+}
+.video-fullscreen::-webkit-media-controls-volume-slider {
+    display: none !important;
+}
+.video-fullscreen::-webkit-media-controls-fullscreen-button {
+    display: none !important;
+}
+.video-fullscreen::-webkit-media-controls-mute-button {
+    display: none !important;
+}
+
+/* Ensuring visibility and placement of other elements remains consistent */
+.video-section {
+    position: relative;
+    text-align: center;
+    margin: 50px 0;
+}
+
+.video-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Full height of the viewport */
+    overflow: hidden; /* Hide anything that overflows the container */
+}
+
+.video-fullscreen {
+    position: absolute; /* Ensure correct positioning */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensure video covers the container */
+    z-index: 1; /* Ensure video is above other elements if needed */
+  }
+  
+
+/* Horizontal line and captions positioning */
+.horizontal-line {
+    position: absolute;
+    top: 130px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 70%;
+    height: 1px;
+    background-color: var(--white);
+    z-index: 2;
+}
+
+.video-caption-one,
+.video-caption-two,
+.video-caption-three {
+    position: absolute;
+    font-size: 24px;
+    color: var(--blue);
+    z-index: 2;
+}
+
+.video-caption-one {
+    top: 80px;
+    left: 20%;
+    transform: translateX(-50%);
+}
+
+.video-caption-two {
+    top: 150px;
+    left: 29.5%;
+    transform: translateX(-50%);
+    font-size: 40px;
+}
+
+.video-caption-three {
+    top: 210px;
+    left: 23.5%;
+    transform: translateX(-50%);
+    font-size: 40px;
+}
+
+.apply-now-container {
+    position: absolute;
+    top: 300px;
+    left: 23.5%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    z-index: 3;
+    font-weight: bold;
+}
+
+.apply-now-text {
+    font-size: 18px;
+    color: var(--blue);
+    white-space: nowrap;
+    margin-right: 20px;
+}
+
+.apply-now-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background-color: var(--black);
+    color: var(--white);
+    text-decoration: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+    position: relative;
+    line-height: 1;
+    text-align: center;
+    border: 2px solid var(--black);
+}
+
+.apply-now-button::after {
+    content: '→';
+    position: absolute;
+    top: 7px;
+    font-size: 30px;
+    color: var(--white);
+}
+
+
+/* For very small screens (up to 480px) */
+@media (max-width: 480px) {
+.carousel-control-prev,
+.carousel-control-next {
+    width: 10%; /* Increase width for easier interaction on very small screens */
+}
+
+.carousel-control-prev {
+    left: 0; /* Align to the left edge with no space */
+}
+
+.carousel-control-next {
+    right: 0; /* Align to the right edge with no space */
+}
+
+.customer-comment {
+    padding-left: 5px; /* Further reduce padding for small screens */
+    height: 200px; /* Adjust height for very small screens */
+}
+
+.comment-box {
+    height: 300px; /* Adjust height for very small screens */
+}
+
+.customer-heading::after {
+    width: 100px; /* Further reduce width of the underline */
+}
+
+.customer-image {
+    margin-left: 10%; /* Further adjust image margin for very small screens */
+}
+
+.comment-descp {
+    font-size: 18px; /* Further reduce font size for very small screens */
+    margin-right: 50px; /* Adjust margin-right for very small screens */
+}
+
+.cust-name {
+    font-size: 20px; /* Further reduce font size for very small screens */
+    margin-top: -60px; /* Adjust margin-top for very small screens */
+}
+
+.cust-type {
+    font-size: 14px; /* Further reduce font size for very small screens */
+}
+
+.quotes {
+    font-size: 20px; /* Further reduce font size for very small screens */
+}
+}
+
+
+/* General responsiveness for small screens */
+@media (max-width: 768px) {
+    .video-fullscreen {
+        height: 60vh; /* Reduce video height for tablets */
+    }
+
+    .horizontal-line {
+        width: 50%; /* Adjust the line width on smaller screens */
+        top: 80px; /* Adjust top position for line */
+    }
+
+    .video-caption-one {
+        font-size: 18px;
+        top: 50px; /* Adjust top position */
+        left: 25%; /* Adjust left positioning */
+    }
+
+    .video-caption-two {
+        font-size: 30px;
+        top: 100px; /* Adjust top position */
+        left: 40%; /* Adjust left positioning */
+    }
+
+    .video-caption-three {
+        font-size: 30px;
+        top: 160px; /* Adjust top position */
+        left: 30%; /* Adjust left positioning */
+    }
+
+    .apply-now-container {
+        top: 220px; /* Adjust button positioning */
+        left: 28%; /* Adjust button positioning */
+    }
+
+    .apply-now-button {
+        width: 40px; /* Smaller button for smaller screens */
+        height: 40px;
+        font-size: 18px; /* Smaller arrow */
+    }
+
+    .apply-now-button::after {
+        font-size: 24px; /* Smaller arrow size */
+        top: 5px; /* Adjust arrow position */
+    }
+}
+
+/* For very small screens */
+@media (max-width: 480px) {
+    .video-fullscreen {
+        height: 50vh; /* Reduce video height further for mobile */
+    }
+
+    .horizontal-line {
+        width: 40%; /* Narrower line */
+        top: 60px; /* Move line upwards */
+    }
+
+    .video-caption-one, .video-caption-two, .video-caption-three {
+        font-size: 16px; /* Smaller captions */
+        left: 20%; /* Adjust positioning */
+    }
+
+    .apply-now-container {
+        top: 180px; /* Further adjust the position */
+        left: 22%; /* Adjust for small screens */
+    }
+
+    .apply-now-button {
+        width: 30px; /* Smaller button for very small screens */
+        height: 30px;
+        font-size: 16px;
+    }
+
+    .apply-now-button::after {
+        font-size: 20px; /* Smaller arrow */
+    }
+}
+
+.about-button-hover1{
+    width:60px;
+    height:60px;
+    background-color:var(--blue);
+    border: none;
+    transition: transform 0.7s ease;
+}
+
+.about-button-hover1:hover{
+    background-color: var(--darkBlue);
+    transform: scale(1.02);
+}
+
+.about-button-hover2 {
+    background-color: var(--blue) !important; /* Blue background */
+    border: none I !important;
+    transition: transform 0.3s !important; /* Smooth transition for effects */
+    color:var(--white)  !important; /* Ensure text color contrasts well */
+}
+
+.about-button-hover2:hover {
+    background-color: var(--darkBlue) !important;
+    transform: scale(1.02);
+}
+
+
+
+/* section line */
+.sectiontitle {
+    position: relative;
+}
+
+.sectiontitle::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 150px;
+    height: 5px;
+    background-color: var(--blue);
+    border-radius: 2px;
+}
+
+.sectiontitle::after {
+    position: absolute;
+    content: "";
+    bottom: 0px;
+    height: 5px;
+    width: 6px;
+    background-color: var(--white);
+    animation: section-title-run 5s infinite linear;
+}
+
+@keyframes section-title-run {
+    0% { left: 0; } 
+    50% { left: 145px; } 
+    100% { left: 0; }
+}
+
+@keyframes section-title-run-center {
+    0% {
+        left: 50%;
+        margin-left: -75px;
+    }
+    50% {
+        left: 50%;
+        margin-left: 50px;
+    }
+    100% {
+        left: 50%;
+        margin-left: -75px;
+    }
+}
+
+.sectiontitle.text-center::before {
+    left: 50%;
+    margin-left: -75px;
+}
+
+.sectiontitle.text-center::after {
+    animation: section-title-run-center 5s infinite linear;
+}
+
+
+
+/* General footer styling */
+.footer-about {
+    margin-bottom: -75px; /* Existing margin, adjust as needed for responsiveness */
+}
+
+.link-animated a{
+    text-decoration: none;
+}
+/* Responsive adjustments for small screens (less than 768px) */
+@media (max-width: 768px) {
+    .footer-about {
+        margin-bottom: 0; /* Remove negative margin on small screens */
+        text-align: center; /* Center-align text for better appearance */
+        font-size: 14px; /* Adjust font size for readability */
+    }
+}
+
+/* Responsive adjustments for very small screens (less than 480px) */
+@media (max-width: 480px) {
+    .footer-about {
+        margin-bottom: 10px; /* Add margin-bottom for small screens */
+        font-size: 12px; /* Further reduce font size */
+    }
+}
+
+/* Adjustments for the animated link hover effect */
+@media (max-width: 768px) {
+    .link-animated a {
+        padding-left: 5px; /* Adjust padding for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .link-animated a {
+        padding-left: 2px; /* Further adjust padding for very small screens */
+    }
+}
+
+
+/* Carousel control buttons */
+.carousel-control-prev,
+.carousel-control-next {
+    width: 40px; /* Set a fixed width for the buttons */
+    height: 40px; /* Set a fixed height for the buttons */
+    top: 50%; /* Center vertically */
+    transform: translateY(-50%); /* Center vertically */
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background for better visibility */
+    border-radius: 50%; /* Make buttons circular */
+    z-index: 10; /* Ensure buttons are on top of other elements */
+    display: flex; /* Center content inside the button */
+    align-items: center; /* Center vertically inside the button */
+    justify-content: center; /* Center horizontally inside the button */
+}
+
+/* Center the previous button on the left side */
+.carousel-control-prev {
+    left: 0; /* Align to the left side */
+    margin-top:70px;
+}
+
+/* Center the next button on the right side */
+.carousel-control-next {
+    right: 0; /* Align to the right side */
+    margin-top:60px;
+}
+
+/* Ensure images within carousel are responsive */
+.carousel-inner img {
+    width: 100%;
+    height: auto;
+}
+
+/* Customer comments section */
+.customer-comment {
+    padding: 20px; /* Add padding around the comments section */
+    position: relative;
+    overflow-y: auto;
+    height: auto; /* Adjust height dynamically */
+}
+
+/* Adjust the comment box layout */
+.comment-box {
+    background-color: white;
+    border-radius: 8px; /* Rounded corners for a smoother look */
+    padding: 10px; /* Add padding inside the comment box */
+    height: auto; /* Adjust height dynamically */
+}
+
+/* Center customer heading and its underline */
+.customer-heading {
+    position: relative;
+    text-align: center; /* Center the text */
+    margin: 20px 0; /* Add space above and below the heading */
+}
+
+.customer-heading::after {
+    content: '';
+    position: absolute;
+    bottom: -10px; /* Adjust position for underline */
+    left: 50%;
+    transform: translateX(-50%); /* Center the underline */
+    width: 120px; /* Adjust the width of the underline */
+    height: 3px;
+    background-color: var(--blue); /* Underline color */
+}
+
+/* Customer image styling */
+.customer-image {
+    border-radius: 50%; /* Make the image circular */
+    width: 80px; /* Set a fixed width */
+    height: 80px; /* Set a fixed height */
+    margin: 10px auto; /* Center the image horizontally */
+    display: block; /* Ensure the image is displayed as a block element */
+}
+
+/* Comment description styling */
+.comment-descp {
+    font-size: 20px; /* Adjust font size for readability */
+    color: var(--blue);
+    font-weight: 300;
+    margin: 10px 0; /* Add vertical margins */
+    text-align: left; /* Center text */
+}
+
+
+/* Quotes styling */
+.quotes {
+    font-size: 24px; /* Adjust font size */
+    margin-bottom: 20px;
+    text-align: center; /* Center text */
+    color: var(--darkBlue);
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .carousel-control-prev,
+    .carousel-control-next {
+        width: 30px; /* Smaller buttons for tablets */
+        height: 30px;
+    }
+
+    .customer-heading::after {
+        width: 100px; /* Smaller underline for tablets */
+    }
+
+    .customer-image {
+        width: 60px; /* Smaller image for tablets */
+        height: 60px;
+    }
+
+    .comment-descp,
+    .quotes {
+        font-size: 18px; /* Smaller font size for tablets */
+    }
+}
+
+@media (max-width: 480px) {
+    .carousel-control-prev,
+    .carousel-control-next {
+        width: 25px; /* Smaller buttons for mobile devices */
+        height: 25px;
+    }
+
+    .customer-heading::after {
+        width: 80px; /* Smaller underline for mobile devices */
+    }
+
+    .customer-image {
+        width: 50px; /* Smaller image for mobile devices */
+        height: 50px;
+    }
+
+    .comment-descp,
+    .quotes {
+        font-size: 16px; /* Smaller font size for mobile devices */
+    }
+}
+
+
+
+/* Add margin to the image section */
+.image-section {
+    margin-top: 50px; /* Adjust this value for desired spacing */
+  }
+  
+  /* Alternatively, add padding or margin to the comment box */
+  .comment-box {
+    padding-top: 270px; /* Adjust this value for desired spacing */
+  }
+  
+
+/* Image section with overlapping divs */
+.image-section {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Fullscreen height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .image-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .fullscreen-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .caption {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+    color: var(--white);
+    font-size: 3rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    color: var(--darkBlue);
+  }
+  
+  .overlap-container {
+    position: absolute;
+    bottom: -200px; /* Positioned at the bottom of the image */
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end; /* Align items at the bottom */
+    gap: 40px; /* Space between the divs */
+    padding: 20px; /* Optional padding for additional space */
+    box-sizing: border-box; /* Includes padding in width calculation */
+    flex-wrap: wrap; /* Allows wrapping on smaller screens */
+  }
+  
+  .overlap-div {
+    width: calc(25% - 40px); /* 4 divs in a row with space */
+    background-color: var(--blue); /* Semi-transparent background */
+    color: white;
+    display: flex;
+    height: 400px;
+    width: 350px;
+    flex-direction: column; /* Stack items vertically */
+    align-items: flex-start; /* Align items to the left */
+    padding: 40px;
+    box-sizing: border-box; /* Includes padding in width calculation */
+    border-radius: 10px;
+    text-align: left; /* Align text to the left */
+    transition: transform 0.3s ease, box-shadow rgb(0,0,0,0.2) ease;
+  }
+
+  .overlap-div:hover{
+        transform: translateY(-5px);
+        box-shadow: 0 8px 16px rgb(0,0,0,0.2);
+  }
+  
+  /* Ensure block-level display with padding */
+  .overlap-div h1, .overlap-div h5, .overlap-div p {
+    display: block;
+    margin: 0;
+    color:var(--darkBlue);
+
+  }
+  
+  /* Specific font sizes for different elements */
+  .overlap-div h1 {
+    font-size: 3rem; /* Large font size for h1 */
+    font-weight: bold; /* Make h1 bold */
+    
+  }
+  
+  .overlap-div h5 {
+    font-size: 1rem; /* Smaller font size than h1 */
+    font-weight: bold;
+    margin-top: 20px; /* Space between h1 and h5 */
+  }
+  
+  .overlap-div p {
+    font-size: 1rem; /* Font size for p */
+    margin-top: 30px; /* Space between h5 and p */
+  }
+  
+  /* Responsive adjustments for smaller screens */
+  @media (max-width: 1024px) {
+    .overlap-div {
+      width: calc(33.33% - 40px); /* 3 divs in a row */
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .overlap-div {
+      width: calc(50% - 40px); /* 2 divs in a row */
+    }
+  
+    .caption {
+      font-size: 2.5rem; /* Smaller caption size */
+    }
+  
+    .overlap-div h1 {
+      font-size: 2rem;
+    }
+  
+    .overlap-div h5 {
+      font-size: 1.5rem;
+    }
+  
+    .overlap-div p {
+      font-size: 0.9rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .overlap-div {
+      width: calc(100% - 40px); /* 1 div per row */
+      height: auto; /* Adjust height for better fit */
+    }
+  
+    .caption {
+      font-size: 2rem; /* Even smaller caption size */
+    }
+  
+    .overlap-div h1 {
+      font-size: 1.5rem;
+    }
+  
+    .overlap-div h5 {
+      font-size: 1.25rem;
+    }
+  
+    .overlap-div p {
+      font-size: 0.8rem;
+    }
+  }
+  
+  
+  /* services css */
+
+  .service-item .service-icon {
+    margin-bottom: 15px;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--darkBlue);
+    border-radius: 2px;
+    transform: rotate(-45deg);
+}
+.service-item {
+    position: relative;
+    color: var(--darkBlue);
+    background-color: var(--blue);
+    height: 350px;
+    padding: 10px 30px;
+    transition: .5s;
+}
+
+.service-item a.btn
+{
+    background-color: var(--darkBlue);
+    color: var(--white);
+    position: absolute;
+    width: 60px;
+    bottom: -50px;
+    left: 50%;
+    margin-left: -30px;
+    opacity:0;
+    transition: .5s ;
+    
+}
+.service-item:hover a.btn
+{
+    bottom: -24px;
+        opacity: 1;
+}

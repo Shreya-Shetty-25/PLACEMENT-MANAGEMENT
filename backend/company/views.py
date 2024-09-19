@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .serializers import CompanySerializer
+from .serializer import CompanySerializer
 from django.http.response import JsonResponse
 from .models import Company
 from django.http.response import Http404

@@ -82,6 +82,7 @@ function Dashboard() {
             <NavLink exact to="/managecompany" activeClassName="activeClicked">
               <CDBSidebarMenuItem icon="user">Manage Companies</CDBSidebarMenuItem>
             </NavLink>
+           
           </CDBSidebarMenu>
         </CDBSidebarContent>
       </CDBSidebar>
