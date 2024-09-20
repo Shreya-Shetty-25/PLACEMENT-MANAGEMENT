@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect , useContext} from 'react';
 import useAxios from "../utils/useAxios";
 import { jwtDecode } from 'jwt-decode';
 import './Dashboard.css'; // Ensure you import the CSS file
 import {NavLink} from 'react-router-dom';
-// import {Navbar} from 'react-bootstrap';
+import AuthContext from '../context/AuthContext';
 import Navbar from './Navbar';
 
 import {
@@ -18,7 +18,10 @@ function Dashboard() {
   const [activeItem, setActiveItem] = useState("Dashboard"); // Keep track of the active nav item
   const api = useAxios();
   const token = localStorage.getItem("authTokens");
-
+  const { role, user } = useContext(AuthContext);
+  console.log('Role:', role);
+  console.log('Token:', token);
+  
   if (token) {
     const decode = jwtDecode(token);
     var user_id = decode.user_id;
@@ -59,15 +62,17 @@ function Dashboard() {
   };
 
   return (
+    <div className='container-fluid side-container' style={{marginTop:"30px"}}>
     <div className="containerss">
           <div className='sidebar'>
-    <CDBSidebar textColor="#333" backgroundColor="#f0f0f0">
+          
+            {role==='admin' &&<>
+              <CDBSidebar textColor="#333" backgroundColor="#f0f0f0">
         <CDBSidebarHeader prefix={<i className="fa fa-bars" />}>
           Navigation
         </CDBSidebarHeader>
         <CDBSidebarContent>
-          <CDBSidebarMenu>
-            <NavLink exact to="/" activeClassName="activeClicked">
+             <CDBSidebarMenu><NavLink exact to="/" activeClassName="activeClicked">
               <CDBSidebarMenuItem icon="home">Home</CDBSidebarMenuItem>
             </NavLink>
             <NavLink exact to="/students" activeClassName="activeClicked">
@@ -82,12 +87,46 @@ function Dashboard() {
             <NavLink exact to="/managecompany" activeClassName="activeClicked">
               <CDBSidebarMenuItem icon="user">Manage Companies</CDBSidebarMenuItem>
             </NavLink>
-           
+            <NavLink exact to="/studentapplication" activeClassName="activeClicked">
+              <CDBSidebarMenuItem icon="user">Student Applications</CDBSidebarMenuItem>
+            </NavLink>
+            </CDBSidebarMenu>
+            
+             </CDBSidebarContent>
+            
+            </CDBSidebar></>
+            }
+             {role==='student' &&<>
+              <CDBSidebar textColor="#333" backgroundColor="#f0f0f0">
+        <CDBSidebarHeader prefix={<i className="fa fa-bars" />}>
+          Navigation
+        </CDBSidebarHeader>
+        <CDBSidebarContent>
+             <CDBSidebarMenu><NavLink exact to="/" activeClassName="activeClicked">
+              <CDBSidebarMenuItem icon="home">Home</CDBSidebarMenuItem>
+            </NavLink>
+            <NavLink exact to="/students" activeClassName="activeClicked">
+              <CDBSidebarMenuItem icon="list">Students List</CDBSidebarMenuItem>
+            </NavLink>
+            <NavLink exact to="/company" activeClassName="activeClicked">
+              <CDBSidebarMenuItem icon="user">Companies</CDBSidebarMenuItem>
+            </NavLink>
+            <NavLink exact to="/applycompany" activeClassName="activeClicked">
+              <CDBSidebarMenuItem icon="user">Apply for Company</CDBSidebarMenuItem>
+            </NavLink>
+            <NavLink exact to="/appstatus" activeClassName="activeClicked">
+              <CDBSidebarMenuItem icon="user">Application Status</CDBSidebarMenuItem>
+            </NavLink>
           </CDBSidebarMenu>
         </CDBSidebarContent>
       </CDBSidebar>
+          </> 
+            }
     </div>
-
+    </div>
+    <div className='className="row side-row"'>
+      <h1 className='container'>Welcome</h1>
+    </div>
     </div>
   );
 }

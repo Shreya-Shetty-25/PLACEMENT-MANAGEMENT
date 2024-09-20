@@ -8,22 +8,21 @@ const swal = require('sweetalert2')
 
 const AuthContext = createContext();
 
-export default AuthContext
-
 export const AuthProvider = ({ children }) => {
     const [authTokens, setAuthTokens] = useState(() =>
         localStorage.getItem("authTokens")
             ? JSON.parse(localStorage.getItem("authTokens"))
             : null
     );
-    
-
+    // const [role, setRole] = useState(''); 
     const [user, setUser] = useState(() => 
         localStorage.getItem("authTokens")
             ? jwtDecode(localStorage.getItem("authTokens"))
             : null
     );
-
+    const [role, setRole] = useState(() => 
+        localStorage.getItem("role") || null // Retrieve role from localStorage if present
+      );
 
     const [loading, setLoading] = useState(true);
 
@@ -31,47 +30,39 @@ export const AuthProvider = ({ children }) => {
 
     const loginUser = async (email, password) => {
         const response = await fetch("http://127.0.0.1:8000/api/token/", {
-            method: "POST",
-            headers:{
-                "Content-Type":"application/json"
-            },
-            body: JSON.stringify({
-                email, password
-            })
-        })
-        const data = await response.json()
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify({ email, password })
+        });
+    
+        const data = await response.json();
         console.log(data);
-
-        if(response.status === 200){
-            console.log("Logged In");
-            setAuthTokens(data)
-            setUser(jwtDecode(data.access))
-            localStorage.setItem("authTokens", JSON.stringify(data))
-            history("/")
-            swal.fire({
-                title: "Login Successful",
-                icon: "success",
-                toast: true,
-                timer: 6000,
-                position: 'top-right',
-                timerProgressBar: true,
-                showConfirmButton: false,
-            })
-
-        } else {    
-            console.log(response.status);
-            console.log("there was a server issue");
-            swal.fire({
-                title: "Username or passowrd does not exists",
-                icon: "error",
-                toast: true,
-                timer: 6000,
-                position: 'top-right',
-                timerProgressBar: true,
-                showConfirmButton: false,
-            })
+    
+        if (response.status === 200) {
+          let determinedRole = email.endsWith('ljku.edu.in') ? 'student' : 'admin';
+          setRole(determinedRole);
+          localStorage.setItem("role", determinedRole); // Save role in localStorage
+          console.log(`Hello, I am a ${determinedRole}`);
+    
+          setAuthTokens(data);
+          setUser(jwtDecode(data.access));
+          localStorage.setItem("authTokens", JSON.stringify(data));
+          history("/");
+    
+        } else {
+          swal.fire({
+            title: "Username or password does not exist",
+            icon: "error",
+            toast: true,
+            timer: 6000,
+            position: 'top-right',
+            timerProgressBar: true,
+            showConfirmButton: false,
+          });
         }
-    }
+      };
 
     const registerUser = async (email, username, password, password2) => {
         const response = await fetch("http://127.0.0.1:8000/api/register/", {
@@ -133,6 +124,8 @@ export const AuthProvider = ({ children }) => {
         registerUser,
         loginUser,
         logoutUser,
+        role,
+        setRole
     }
 
     useEffect(() => {
@@ -149,3 +142,4 @@ export const AuthProvider = ({ children }) => {
     )
 
 }
+export default AuthContext;

@@ -10,10 +10,13 @@ import Dashboard from './views/Dashboard'
 import Navbar from './views/Navbar'
 import Students from './views/Students'
 import Manage from "./views/Manage"
+import ManageCompany from "./views/ManageCompany"
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "./App.css"
 import Company from './views/Company'
-import ManageCompany from './views/ManageCompany'
+import ApplyCompany from './views/ApplyCompany'
+import StudentApplication from './views/StudentApplication'
+import StudentStatus from './views/StudentStatus'
 // import HireStudents from './views/HireStudents'
 
 function App() {
@@ -34,6 +37,9 @@ function App() {
           <Route path="/manage" element={<Manage/>} />
           <Route path="/company" element={<Company/>} />
           <Route path="/managecompany" element={<ManageCompany/>} />
+          <Route path="/applycompany" element={<ApplyCompany/>} />
+          <Route path="/studentapplication" element={<StudentApplication/>} />
+          <Route path="/appstatus" element={<StudentStatus/>} />
           {/* <Route path="/hirestudent" element={<HireStudents/>} /> */}
         </Routes>
       

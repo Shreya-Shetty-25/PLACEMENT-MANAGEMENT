@@ -7,6 +7,7 @@ import UpdateCompanyModel from "./UpdateCompanyModel";
 import { getCompany, deleteCompany } from "../services/CompanyService";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrashAlt } from "@fortawesome/free-solid-svg-icons";
+import Dashboard from "./Dashboard";
 
 const ManageCompany = () => {
   const [companies, setCompanies] = useState([]);
@@ -67,6 +68,7 @@ const ManageCompany = () => {
 
   return (
     <div className="container-fluid side-container">
+      <Dashboard/>
       <div className="row side-row">
         <p id="manage"></p>
         <Table

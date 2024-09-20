@@ -25,7 +25,7 @@ const Company = () => {
     {/* <div>
     <Dashboard/>
     </div> */}
-
+    <Dashboard/>
    <div className="row side-row" >
     <p id="before-table"></p>
         <Table striped bordered hover className="react-bootstrap-table" id="dataTable">
