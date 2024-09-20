@@ -33,11 +33,11 @@ const Company = () => {
             <tr>
             <th >ID</th>
                   <th>Company Name</th>
-                  <th>Description</th>
+                  <th>Criteria</th>
                   <th>Salary</th>
                   <th>Job Role</th>
                   <th>Location</th>
-                  <th>Criteria</th>
+                  <th>Description</th>
                   <th>Last Date to Apply</th>       
             </tr>
         </thead>

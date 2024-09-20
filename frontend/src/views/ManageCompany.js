@@ -80,11 +80,11 @@ const ManageCompany = () => {
             <tr>
               <th>ID</th>
               <th>Company Name</th>
-              <th>Description</th>
+              <th>Criteria</th>
               <th>Salary</th>
               <th>Job Role</th>
               <th>Location</th>
-              <th>Criteria</th>
+              <th>Description</th>
               <th>Last Date to Apply</th>
               <th>Action</th>
             </tr>
@@ -94,7 +94,7 @@ const ManageCompany = () => {
               <tr key={comp.companyId}>
                 <td>{comp.companyId}</td>
                 <td>{comp.companyName}</td>
-                <td>{comp.description}</td>
+                <td>{comp.decription}</td>
                 <td>{comp.salary}</td>
                 <td>{comp.jobrole}</td>
                 <td>{comp.location}</td>

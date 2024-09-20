@@ -125,10 +125,11 @@ const AddCompanyModal = (props) => {
                                     <Form.Label>Company Name</Form.Label>
                                     <Form.Control type="text" name="companyName" required placeholder="" />
                                 </Form.Group>
-                                <Form.Group controlId="description">
-                                    <Form.Label>Description</Form.Label>
-                                    <Form.Control as="textarea" name="description" required placeholder="" rows={3} />
+                                <Form.Group controlId="criteria">
+                                    <Form.Label>Criteria</Form.Label>
+                                    <Form.Control type="text" name="criteria" required placeholder="" />
                                 </Form.Group>
+                               
                                 <Form.Group controlId="salary">
                                     <Form.Label>Salary</Form.Label>
                                     <Form.Control type="text" name="salary" required placeholder="" />
@@ -141,16 +142,16 @@ const AddCompanyModal = (props) => {
                                     <Form.Label>Location</Form.Label>
                                     <Form.Control type="text" name="location" required placeholder="" />
                                 </Form.Group>
-                                <Form.Group controlId="criteria">
-                                    <Form.Label>Criteria</Form.Label>
-                                    <Form.Control type="text" name="criteria" required placeholder="" />
+                                <Form.Group controlId="description">
+                                    <Form.Label>Description</Form.Label>
+                                    <Form.Control as="textarea" name="description" required placeholder="" rows={3} />
                                 </Form.Group>
                                 <Form.Group controlId="lastdate">
                                     <Form.Label>Last Date</Form.Label>
                                     <Form.Control type="date" name="lastdate" required placeholder="" />
                                 </Form.Group>
                                 <Form.Group>
-                                    <Button variant="primary" type="submit">
+                                    <Button variant="primary" type="submit" style={{marginTop:"10px"}}>
                                         Submit
                                     </Button>
                                 </Form.Group>

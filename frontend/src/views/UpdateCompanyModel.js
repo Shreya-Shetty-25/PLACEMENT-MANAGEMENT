@@ -41,10 +41,11 @@ const UpdateCompanyModel = (props) => {
                                     <Form.Label>Company Name</Form.Label>
                                     <Form.Control type="text" name="companyName" required defaultValue={props.company.companyName} placeholder="" />
                             </Form.Group>
-                            <Form.Group controlId="description">
-                                    <Form.Label>Description</Form.Label>
-                                    <Form.Control as="textarea" name="description" required defaultValue={props.company.decription} placeholder="" rows={3}/>
+                            <Form.Group controlId="criteria">
+                                    <Form.Label>Criteria</Form.Label>
+                                    <Form.Control type="text" name="criteria" required defaultValue={props.company.criteria} placeholder="" />
                             </Form.Group>
+                            
                             <Form.Group controlId="salary">
                                     <Form.Label>Salary</Form.Label>
                                     <Form.Control type="text" name="salary" required defaultValue={props.company.salary} placeholder="" />
@@ -57,9 +58,9 @@ const UpdateCompanyModel = (props) => {
                                     <Form.Label>Location</Form.Label>
                                     <Form.Control type="text" name="location" required defaultValue={props.company.location} placeholder="" />
                             </Form.Group>
-                            <Form.Group controlId="criteria">
-                                    <Form.Label>Criteria</Form.Label>
-                                    <Form.Control type="text" name="criteria" required defaultValue={props.company.criteria} placeholder="" />
+                            <Form.Group controlId="description">
+                                    <Form.Label>Description</Form.Label>
+                                    <Form.Control as="textarea" name="description" required defaultValue={props.company.decription} placeholder="" rows={3}/>
                             </Form.Group>
                             <Form.Group controlId="lastdate">
                                     <Form.Label>Last Date</Form.Label>

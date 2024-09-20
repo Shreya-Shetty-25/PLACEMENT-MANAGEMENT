@@ -24,7 +24,7 @@ import AuthContext from '../context/AuthContext'
 	return (
         <div>
         <>
-          <section className="vh-100" style={{ backgroundColor: "#9A616D" }}>
+          <section className="vh-100" style={{ backgroundColor: "#9A616D"  }}>
             <div className="container py-5 h-100">
               <div className="row d-flex justify-content-center align-items-center h-100">
                 <div className="col col-xl-10">
@@ -103,9 +103,9 @@ import AuthContext from '../context/AuthContext'
                                 Register
                               </button>
                             </div>
-                            <a className="small text-muted" href="#!">
+                            {/* <a className="small text-muted" href="#!">
                               Forgot password?
-                            </a>
+                            </a> */}
                             <p className="mb-5 pb-lg-2" style={{ color: "#393f81" }}>
                               Already have an account?{" "}
                               <Link to="/login" style={{ color: "#393f81" }}>
